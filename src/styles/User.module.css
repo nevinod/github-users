@@ -1,0 +1,15 @@
+.userContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.imageContainer {
+  width: 40vw;
+}
+
+.userRight {
+  display: flex;
+  flex-direction: column;
+}

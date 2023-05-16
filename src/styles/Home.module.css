@@ -1,0 +1,56 @@
+.userItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 200px;
+  border: 1px solid rgba(128, 128, 128, 0.24);
+  border-radius: 25px;
+  margin: 20px;
+  width: 60vw;
+  align-items: center;
+}
+
+.userLeft {
+  width: 20%;
+}
+
+.userRight {
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar {
+  max-height: 200px;
+  margin-top: 5px;
+}
+
+.header {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.input {
+  margin: 10px;
+}
+
+.home {
+  margin-top: 50px;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.label {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.inputContainer {
+  margin-top: 20px;
+}
