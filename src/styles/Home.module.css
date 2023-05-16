@@ -37,6 +37,10 @@
 
 .home {
   margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .form {
@@ -53,4 +57,12 @@
 
 .inputContainer {
   margin-top: 20px;
+}
+
+.arrowContainer {
+  display: flex;
+  margin-top: 50px;
+  width: 40%;
+  flex-direction: row;
+  justify-content: space-between;
 }

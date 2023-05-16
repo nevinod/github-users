@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Spinner } from "@chakra-ui/react";
+import { Spinner, IconButton } from "@chakra-ui/react";
 import { Button } from "react-bootstrap";
 import { useGetUsers } from "../hooks/useGetUsers";
 
 import styles from "../styles/Home.module.css";
+import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 
 interface UserItemProps {
   login: string;
@@ -29,14 +30,22 @@ function UserItem({ login, image }: UserItemProps) {
 export default function Home() {
   const [input, setInput] = useState("");
   const [keyword, setKeyword] = useState("");
-  const [error, setError] = useState("");
   const [page, setPage] = useState(1);
 
   const { users, loading } = useGetUsers(keyword, page);
 
-  function handleSubmit(e: any) {
+  function handleSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
     setKeyword(input);
+  }
+
+  function nextPage() {
+    setPage((page) => page + 1);
+  }
+
+  function previousPage() {
+    if (page === 1) return;
+    setPage((page) => page - 1);
   }
 
   return (
@@ -69,6 +78,19 @@ export default function Home() {
             />
           );
         })}
+      </div>
+      <div className={styles.arrowContainer}>
+        <IconButton
+          aria-label="Search database"
+          icon={<ArrowBackIcon />}
+          onClick={previousPage}
+        />
+        <Button>{page}</Button>
+        <IconButton
+          aria-label="Search database"
+          icon={<ArrowForwardIcon />}
+          onClick={nextPage}
+        />
       </div>
     </div>
   );

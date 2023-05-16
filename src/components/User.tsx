@@ -1,16 +1,14 @@
 import { Link, useParams } from "react-router-dom";
 import { useGetUser } from "../hooks/useGetUser";
+import { NOT_FOUND_TEXT } from "../constants";
 
 import styles from "../styles/User.module.css";
 
 function User() {
   const { user } = useParams();
-
   const { userInfo }: any = useGetUser(user);
 
-  if (!userInfo.data) return <h2>Not Found</h2>;
-
-  console.log(userInfo);
+  if (!userInfo.data) return <h2>{NOT_FOUND_TEXT}</h2>;
 
   return (
     <div className={styles.userContainer}>

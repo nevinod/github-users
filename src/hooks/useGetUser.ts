@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
+import { BASE_URL, NOT_FOUND_TEXT } from "../constants";
 import axios from "axios";
-
-const BASE_URL = "https://api.github.com";
 
 export function useGetUser(username: string | undefined) {
   const [user, setUser] = useState({});
@@ -12,7 +11,7 @@ export function useGetUser(username: string | undefined) {
     if (response.data.login) {
       setUser(response);
     } else {
-      setUser({ login: "Not Found" });
+      setUser({ login: NOT_FOUND_TEXT });
     }
   }, [username]);
 

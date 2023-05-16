@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
+import { BASE_URL } from "../constants";
 import axios from "axios";
-
-const BASE_URL = "https://api.github.com";
 
 interface UserItem {
   login: string;
@@ -30,7 +29,7 @@ export function useGetUsers(keyword: string, page: number) {
       setUsers([]);
     }
     setLoading(false);
-  }, [keyword]);
+  }, [keyword, page]);
 
   useEffect(() => {
     if (!keyword) return;
