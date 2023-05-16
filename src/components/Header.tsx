@@ -8,7 +8,7 @@ function Header() {
   return (
     <Navbar bg="light" expand="lg" className={styles.header}>
       <Container>
-        <Navbar.Brand href="#home">Github Users</Navbar.Brand>
+        <Navbar.Brand href="/">Github Users</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

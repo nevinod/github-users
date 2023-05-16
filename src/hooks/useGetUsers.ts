@@ -22,10 +22,8 @@ export function useGetUsers(keyword: string, page: number) {
 
   const getUsers = useCallback(async () => {
     const url = `${BASE_URL}/search/users?page=${page.toString()}&per_page=20&q=${keyword}`;
-    console.log(url);
     setLoading(true);
     const response: ResponseType = await axios.get(url);
-    console.log(response);
     if (response.data.items) {
       setUsers(response.data.items);
     } else {
